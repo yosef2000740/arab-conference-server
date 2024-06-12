@@ -1,0 +1,5 @@
+./arab-conference-back-end/node_modules
+./arab-conference-front/node_modules
+./arab-conference-dashboard/node_modules
+./arab-conference-dashboard/.next
+./arab-conference-front/.next
