@@ -74,7 +74,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## dependences
 
-[ ] - Nodejs
-[ ] - mongodb
-[ ] - create database in mongodb ,the db name is conference
+[]  Nodejs
+[]  mongodb
+[]  create database in mongodb ,the db name is conference
 
