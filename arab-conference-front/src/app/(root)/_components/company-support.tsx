@@ -55,7 +55,7 @@ const logos = [
   const CompanySupport = () => {
     return (
         
-      <div className="w-full py-12">
+      <div className="w-full p-16">
         <div className="mx-auto w-full px-4 md:px-8">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl flex justify-center items-center text-muted">Sponsored by</h2>
 

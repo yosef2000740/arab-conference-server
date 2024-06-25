@@ -16,7 +16,7 @@ export default async function Page() {
     
     return (
         <div className="h-full">
-            <Card className="bg-dark-tremor-brand-faint text-tremor-brand-inverted">
+            <Card className="text-tremor-brand-inverted">
                 <CardHeader className="items-center">
                     <CardTitle>Add Conference</CardTitle>
                 </CardHeader>

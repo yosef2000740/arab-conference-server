@@ -9,7 +9,7 @@ export default async function Topics() {
     const topics =  lastConference?.topics;
     console.log(topics);
     return (
-        <div className="container space-y-12 px-4 md:px-6">
+        <div className="container space-y-12 px-4 md:px-0 md:py-14">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-muted">Explore Our Topics</h2>

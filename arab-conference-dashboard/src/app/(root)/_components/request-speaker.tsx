@@ -18,7 +18,7 @@ export default async function RequestSpeaker() {
 
     return (
         <div className="w-full">
-            <Card className="bg-dark-tremor-brand-faint text-tremor-brand-inverted">
+            <Card className="bg-blend-multiply text-black">
                 <CardHeader className="items-center">
                     <CardTitle>Requests as Speaker</CardTitle>
                 </CardHeader>

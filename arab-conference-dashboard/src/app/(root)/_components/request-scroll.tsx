@@ -39,7 +39,7 @@ export default function RequestScroll({ speaker, conference, status, _id }: Requ
     return (
         <div className="flex flex-col gap-4">
             <div className="space-y-2">
-                <h4 className="text-sm font-medium leading-none">
+                <h4 className="font-medium leading-none">
                     {speaker.firstName} {speaker.lastName}
                 </h4>
                 <p className="text-sm text-muted-foreground">

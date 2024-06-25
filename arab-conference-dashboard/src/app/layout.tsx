@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import { Rubik } from "next/font/google";
-import AuthProvider from "@/context/Auth";
 
 
 const rubik = Rubik({ subsets: ["arabic", "latin"] });
@@ -22,7 +20,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={cn("dark",rubik.className)}>
+            <body className={cn("light",rubik.className)}>
                 <Providers>
                         {children}
                 </Providers>

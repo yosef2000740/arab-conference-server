@@ -13,7 +13,7 @@ export default async function RequestAttendee() {
 
     return (
         <div className="w-full">
-            <Card className="text-tremor-brand-inverted">
+            <Card className="">
                 <CardHeader className="items-center">
                     <CardTitle>Requests as Attendee</CardTitle>
                 </CardHeader>

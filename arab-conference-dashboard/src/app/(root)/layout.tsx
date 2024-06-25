@@ -22,7 +22,7 @@ export default function RootLayout({
     }
     return (
         <div
-            className={"flex w-full h-screen p-6 space-x-4 bg-dark-tremor-background-muted"}>
+            className={"flex w-full h-screen p-6 space-x-4 bg-tremor-brand-muted"}>
           <AuthProvider>
             <Sidebar />
             <div className="flex flex-col items-center justify-center w-full h-full space-y-4">
@@ -33,7 +33,7 @@ export default function RootLayout({
                         <Actions user={user} />
                     </header>
                 </div>
-                    <div className="w-full h-full bg-dark-tremor-brand-faint">{children}</div>
+                    <div className="w-full h-full bg-white">{children}</div>
             </div>
             </AuthProvider>
 

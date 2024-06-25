@@ -26,12 +26,12 @@ import { useLoalStorage } from "@/hooks/useLocalStorage"
 const customStyles = {
     control: (provided: any, state: any) => ({
       ...provided,
-      backgroundColor: '#070616', // Change this to the desired background color
+      backgroundColor: '#FFFFFF', // Change this to the desired background color
       // You can also customize other properties here, like border color, etc.
     }),
     option: (provided: any, state: { isSelected: any }) => ({
       ...provided,
-      backgroundColor: state.isSelected ? '#04214C' : '#04214C',
+      backgroundColor: state.isSelected ? '#FFFFFF' : '#FFFF',
     }),
   };
   
@@ -42,7 +42,6 @@ type Props={
 
 export default function ConferenceForm({options}:Props) {
     const [_, startTransition] = useTransition();
-    const [topics, setTopics] = useState<string[]>([]);
     const {getItem}=useLoalStorage("token") 
     
     console.log(getItem());
@@ -206,7 +205,7 @@ export default function ConferenceForm({options}:Props) {
                                 isMulti
                                 options={options}
                                 classNamePrefix="select"
-                                className="text-green-500"
+                                className="text-black"
                                 onChange={(val) => field.onChange(val.map(item => item.value))}
                                 value={options.filter(option => field.value.includes(option.value))}
                                 styles={customStyles}

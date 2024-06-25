@@ -1,20 +1,13 @@
-import Section from "@/components/Section";
-import BackgroundGrid from "@/components/background-grid";
+
 import Image from "next/image";
 import curve from "@/../public/hero/cuarve.png";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import FloatIcons from "./float-icons";
 import { MdDateRange } from "react-icons/md";
-import { getConferences, getLastConferences } from "@/query/queries";
+import {getLastConferences } from "@/query/queries";
 import TestimonialCarousel from "./testimonial-carousel";
-import field1 from "@/../public/physics.gif";
-import field2 from "@/../public/tech.gif";
 
-import field3 from "@/../public/sience.gif";
-import field4 from "@/../public/ai.gif";
-
-import field5 from "@/../public/others.gif";
 
 
 const testimonials = [
@@ -63,7 +56,7 @@ export default async function Hero() {
     const lastConference = await getLastConferences();
     return (
         <div
-            className="p-4"
+            className="px-16 py-14"
             id="hero"
         >
             {/* <BackgroundGrid /> */}

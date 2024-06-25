@@ -29,7 +29,7 @@ export function Accordion({ items }: AccordionProps) {
             className="w-full p-0 bg-transparent"
             itemClasses={{
                 title: "capitalize",
-                base: "!p-0 !shadow-none !bg-slate-900 [&:not([data-open]):hover:!bg-slate-800",
+                base: "!p-0 !shadow-none [&:not([data-open]):hover:!bg-slate-800 border",
                 heading: "px-4 py-2 hover:bg-default/40 rounded-medium",
                 content: "px-2 rounded-medium",
                 trigger: "py-2",

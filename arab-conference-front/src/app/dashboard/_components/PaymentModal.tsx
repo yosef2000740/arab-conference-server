@@ -16,9 +16,9 @@ import { useForm } from 'react-hook-form';
 import { visaSchema } from '@/schema';
 
 const MOCK_VISA = {
-	cardNumber: '1234 1234 1234 1234',
-	expirationDate: '12/23',
-	cvv: '000',
+	cardNumber: '5123456789012346',
+	expirationDate: '12/25',
+	cvv: '123',
 };
 
 export default function PaymentModal({

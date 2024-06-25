@@ -9,7 +9,7 @@ export async function AllConferences() {
     return (
         <>
             <main className="w-full ">
-                <Card className="text-tremor-brand-inverted">
+                <Card className="">
                     <CardHeader className="items-center">
                         <CardTitle>show conference</CardTitle>
                     </CardHeader>

@@ -11,10 +11,7 @@ import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { Accordion, AccordionItem } from "./accordion";
 import { useLoalStorage } from "@/hooks/useLocalStorage";
-import { redirect } from "next/navigation";
-import { useAuth } from "@/context/Auth";
-import { toast } from "@/components/ui/use-toast";
-import { useEffect } from "react";
+
 
 type Props = {
     //   metadata: {
@@ -28,7 +25,7 @@ export function Sidebar({ }: Props) {
     return (
         <aside>
             <nav className="w-1/4 h-full min-w-[280px] max-w-sm">
-                <Card className="h-full flex flex-col items-start justify-between">
+                <Card className="h-full flex flex-col items-start justify-between bg-white/75">
                     <div className="h-full flex flex-col items-start w-full overflow-y-clip">
                         <CardHeader className="border-b w-full">
                             <CardTitle>
@@ -65,11 +62,11 @@ export function Sidebar({ }: Props) {
                                         element: <AccordionItem items={[
                                             {
                                                 name: "students",
-                                                href: "/"
+                                                href: "/user"
                                             },
                                             {
                                                 name: "docktors",
-                                                href: "/"
+                                                href: "/dock"
                                             }
                                         ]} />
                                     }
