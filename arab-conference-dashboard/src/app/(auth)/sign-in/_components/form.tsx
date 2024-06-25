@@ -50,7 +50,7 @@ export function SignInForm() {
                         description: res.secccuss,
                     })
                     console.log(res.user);
-                    setItem(res.user.data._id);
+                    setItem(res.user.data.token);
 
                     // navigate to home page
                     window.location.href = "/";

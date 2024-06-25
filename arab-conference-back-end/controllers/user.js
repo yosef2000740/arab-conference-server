@@ -1,6 +1,12 @@
 const User = require("../models/user");
 const AppError = require("../models/app-error");
 const AppResponse = require("../models/app-response");
+const jwt = require("jsonwebtoken");
+
+require('dotenv').config();
+
+// Secret key for JWT (In a real application, store this in an environment variable)
+const JWT_SECRET = process.env.JWT_SECRET;
 
 async function create(req, res) {
     const user = new User(req.body);
@@ -31,7 +37,7 @@ async function getOne(req, res) {
     const user = await User.findById(id);
 
     if (!user) {
-        throw new AppError("user not found", 404);
+        throw new AppError("User not found", 404);
     }
     new AppResponse(res, user, 200).send();
 }
@@ -44,7 +50,12 @@ async function login(req, res) {
         throw new AppError("Invalid email or password", 401);
     }
 
-    new AppResponse(res, user, 200).send();
+    // Generate JWT token
+    const token = jwt.sign({ id: user._id, email: user.email }, JWT_SECRET, {
+        expiresIn: "1h", // Token expires in 1 hour
+    });
+
+    new AppResponse(res, { user, token }, 200).send();
 }
 
 module.exports = {
@@ -53,3 +64,4 @@ module.exports = {
     create,
     login,
 };
+

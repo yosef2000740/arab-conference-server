@@ -1,4 +1,4 @@
-import Section from "@/components/Section";
+"use client"
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -8,44 +8,37 @@ import {
     CardFooter,
     CardTitle,
 } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function PricingCard() {
 
     const pricing = [
         {
             title: "Student",
-            description: "Contact us for price details",
-            price: "99E",
+            price: "Free",
             features: [
-                "Unlimted storage",
-                "Unlimted network generation time",
-                "Unlimted projects",
-                "Free chat support",
-                "Consulting services",
+                "attendee conferance",
+                "Give some internship",
+                "Some gift",
             ],
         },
-        {
-            title: "Student",
-            description: "Contact us for price details",
+       {
+            title: "Nourmal attendee",
             price: "99E",
             features: [
-                "Unlimted storage",
-                "Unlimted network generation time",
-                "Unlimted projects",
-                "Free chat support",
-                "Consulting services",
+                "attendee conferance",
+                "Give some internship",
+                "Some gift",
             ],
         },
+
         {
-            title: "Student",
-            description: "Contact us for price details",
-            price: "99E",
+            title: "Speaker",
+            price: "999E",
             features: [
-                "Unlimted storage",
-                "Unlimted network generation time",
-                "Unlimted projects",
+                "Join as Speaker",
+                "Give you Free taket other conferance",
                 "Free chat support",
-                "Consulting services",
             ],
         },
     ]
@@ -60,26 +53,28 @@ export default function PricingCard() {
                 </span>
                 <div className="flex flex-col lg:flex-row gap-10 items-center justify-center text-center">
                     {pricing.map((price, index) => (
-                        <Card className="flex flex-col justify-between hover:scale-105 duration-300 hover:gradient-border">
+                        <Card key={index} className="flex flex-col justify-between hover:scale-105 duration-300 hover:gradient-border w-full">
                             <CardHeader className="font-heading gap-y-3">
                                 <CardTitle className="capitalize relative">
                                     {price.title}
                                 </CardTitle>
                                 <CardDescription className="text-foreground">
-                                    {price.description}
+                                    {price.price}
                                 </CardDescription>
                             </CardHeader>
-                            <CardContent className="font-body h-full">
+                            <CardContent className="font-body h-full text-left">
                                 <ul className="list-disc ml-4 capitalize">
                                     {price.features.map((feature, index) => (
                                         <li key={index}>
-                                            <p>{feature}</p>
+                                            <span className="text-wrap">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </CardContent>
                             <CardFooter>
-                                <Button className="text-lg w-full">Contact us</Button>
+                                <Link href="/sign-in" className="w-full">
+                                   <Button className="text-lg w-full">Contact us</Button>
+                                </Link>
                             </CardFooter>
                         </Card>
                     ))}

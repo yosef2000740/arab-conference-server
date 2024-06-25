@@ -4,8 +4,6 @@ import { Separator } from "@/components/ui/separator"
 import { FcCancel } from "react-icons/fc";
 import { CiCircleCheck } from "react-icons/ci";
 
-
-
 type RequestScrollProps = {
     speaker: any;
     conference?: any;
@@ -14,7 +12,7 @@ type RequestScrollProps = {
 }
 
 export default function RequestScroll({ speaker, conference, status, _id }: RequestScrollProps) {
-    const handleRejectSpealer = async (id: string) => {
+     const handleRejectSpealer = async (id: string) => {
         const request = await fetch(`http://localhost:3000/speaker-applications/${_id}/review`, {
             method: "POST",
             headers: {

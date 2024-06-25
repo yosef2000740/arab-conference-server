@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 
 
 
+
 export default async function RequestSpeaker() {
+   
 
     const speakersRequest = await getSpeakerReq();
 
@@ -23,7 +25,7 @@ export default async function RequestSpeaker() {
                 <CardContent className="w-full">
                     <ScrollArea className="h-48 w-full rounded-md border p-4">
                         {isPending.length > 0 ? (
-                            isPending.map((speaker: any, k) => (
+                            isPending.map((speaker: any, k:number) => (
                                 <div className="flex flex-col gap-4 p-4" key={k}>
                                     <RequestScroll key={k} _id={speaker._id} status={speaker.status} speaker={speaker.speaker} conference={speaker.conference} />
                                     <Separator className="my-2" />

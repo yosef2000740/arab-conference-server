@@ -5,6 +5,7 @@ import Topics from "./_components/topics";
 import PricingCard from "./_components/pricing-card";
 import CompanySupport from "./_components/company-support";
 import HowToUse from "./_components/how-use-product";
+import Footer from "@/components/Footer";
 
 export default function Home() {
     return (
@@ -19,6 +20,7 @@ export default function Home() {
                 <PricingCard />
                 <CompanySupport />
             </div>
+            <Footer />
         </main>
     );
 }

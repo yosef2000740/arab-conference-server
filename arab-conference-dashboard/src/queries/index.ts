@@ -29,17 +29,17 @@ export async function signInUser(values: z.infer<typeof signInSchema>) {
     }
 }
 
-export async function createConference(values: z.infer<typeof ConferenceSchema>) {
+export async function createConference(values: z.infer<typeof ConferenceSchema>,token:string) {
     const validatedFields = ConferenceSchema.safeParse(values);
 
     if (!validatedFields.success) {
         return { error: "Invalid fields !" };
     }
-
     const request = await fetch("http://localhost:3000/conferences", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(values),
     });

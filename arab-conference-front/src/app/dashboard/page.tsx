@@ -5,9 +5,6 @@ import User from "./_components/user";
 
 export default async function page() {
   const lastConference=await getLastConferences();
-
-
-
   return (
     <div className="flex min-h-screen w-full">
       <div className="flex-1 bg-gray-50 dark:bg-gray-900">

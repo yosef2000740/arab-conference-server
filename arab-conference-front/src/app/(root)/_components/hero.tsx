@@ -7,7 +7,49 @@ import { Button } from "@/components/ui/button";
 import FloatIcons from "./float-icons";
 import { MdDateRange } from "react-icons/md";
 import { getConferences, getLastConferences } from "@/query/queries";
+import TestimonialCarousel from "./testimonial-carousel";
+import field1 from "@/../public/physics.gif";
+import field2 from "@/../public/tech.gif";
 
+import field3 from "@/../public/sience.gif";
+import field4 from "@/../public/ai.gif";
+
+import field5 from "@/../public/others.gif";
+
+
+const testimonials = [
+  {
+    text: 'Physics is the fundamental science that seeks to understand the behavior of the universe through the study of matter, energy, and the interactions between them.',
+    field: 'Physics',
+    image:
+      '/physics.gif',
+  },
+  {
+    text: 'Technology refers to the application of scientific knowledge for practical purposes, encompassing tools, systems, and methods that improve efficiency, solve problems, or enhance capabilities in various domains.',
+    field: 'Technology',
+
+    image:
+      '/tech.gif',
+  },
+  {
+    text: 'Science is the systematic study of the natural world through observation, experimentation, and analysis, aiming to understand the underlying principles and mechanisms governing physical, biological.',
+    field: 'science',
+    image:
+      '/sience.gif',
+  },
+  {
+    text: 'Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think, learn, and solve problems autonomously.',
+    field: 'AI',
+    image:
+      '/ai.gif',
+  },
+   {
+    text: 'We also organise a lot of conferences in fields such as astronomy, engineering, networks, relationships and other important fields in our lives.',
+    field: 'other talks',
+    image:
+      '/others.gif',
+  }, 
+]
 export const Gradient = () => {
     return (
         <>
@@ -69,13 +111,8 @@ export default async function Hero() {
                 </div>
                 <div className="relative z-1 rounded-2xl border border-primary ">
                     <div className="relative rounded-[1rem]">
-                        <div className="px-12 py-6 z-10">
-                            <div
-                                className="w-[90%] h-96 flex text-center justify-center items-center mx-auto bg-secondary"
-
-                            >
-                                Video
-                            </div>
+                        <div className="px-12 py-6 z-10 flex justify-center items-center">
+                            <TestimonialCarousel testimonials={testimonials} />   
                         </div>
                     </div>
                     <FloatIcons />

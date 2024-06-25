@@ -1,5 +1,6 @@
 "use client"
 import { useLoalStorage } from "@/hooks/useLocalStorage";
+import { redirect } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 
 type AuthContextType = {
@@ -14,16 +15,17 @@ const INITIAL_STATE: AuthContextType = {
 
 export const AuthContext = createContext<AuthContextType>(INITIAL_STATE);
 
-export default function AuthProvider({ children }: { children: React.ReactNode }) {
+export default function AuthProvider({ children}: { children: React.ReactNode}) {
     const [isAuth, setIsAuthenticated] = useState<boolean>(false);
     const { getItem } = useLoalStorage("token");
 
     useEffect(() => {
         checkAuthUser();
+        
     }, []);
 
     const checkAuthUser = () => {
-        const token = getItem();
+       const token = getItem();
         if (!token) {
             setIsAuthenticated(false);
             return false;

@@ -20,6 +20,7 @@ import { useTransition,useState } from "react"
 import { toast } from "@/components/ui/use-toast"
 import { ConferenceSchema } from "@/schema"
 import { createConference } from "@/queries"
+import { useLoalStorage } from "@/hooks/useLocalStorage"
 
 
 const customStyles = {
@@ -42,8 +43,9 @@ type Props={
 export default function ConferenceForm({options}:Props) {
     const [_, startTransition] = useTransition();
     const [topics, setTopics] = useState<string[]>([]);
-
-
+    const {getItem}=useLoalStorage("token") 
+    
+    console.log(getItem());
     
     const form = useForm<z.infer<typeof ConferenceSchema>>({
         resolver: zodResolver(ConferenceSchema),
@@ -61,7 +63,7 @@ export default function ConferenceForm({options}:Props) {
     async function onSubmit(values: z.infer<typeof ConferenceSchema>) {
         console.log(values)
         startTransition(() => {
-            createConference(values).then((res) => {
+            createConference(values,getItem()).then((res) => {
                 if (res.secccuss) {
                     toast({
                         variant: "default",

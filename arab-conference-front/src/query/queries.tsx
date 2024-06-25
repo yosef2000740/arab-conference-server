@@ -57,7 +57,6 @@ export async function createAttendeeAccount(values: z.infer<typeof signUpSchema>
 
 export async function signInUser(values: z.infer<typeof signInSchema>) {
     const validatedFields = signInSchema.safeParse(values);
-    const {setItem}=useLoalStorage("token");
     if (!validatedFields.success) {
         return { error: "Invalid fields !" };
     }
@@ -191,7 +190,7 @@ export async function getAllTopicsByID(_id:string) {
         return topics?.data;
     }
     return { error: "An error occurred !"};
-} 
+}
 
 export async function getUserById(_id:string) {
     const request = await fetch(`http://localhost:3000/users/${_id}`,{ cache: 'no-store' });
